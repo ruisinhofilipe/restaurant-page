@@ -1,0 +1,1 @@
+(()=>{const t=document.createElement("div");t.setAttribute("id","content"),t.textContent="arroz",document.body.appendChild(t)})();
