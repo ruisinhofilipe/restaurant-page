@@ -6,7 +6,7 @@ for (let i = 0; i < 3; i++) {
     if (i === 0) {
         liMenu.textContent = 'Menu';
     } else if (i === 1) {
-        liMenu.textContent = 'Locations';
+        liMenu.textContent = 'Location';
     } else {
         liMenu.textContent = 'Contact us';
     }
