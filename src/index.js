@@ -1,5 +1,4 @@
-const divContent = document.createElement('div');
-divContent.setAttribute('id', 'content');
-divContent.textContent = 'arroz';
+import './style.css';
+import mainContainer from './mainContainer';
 
-document.body.appendChild(divContent);
+document.body.appendChild(mainContainer)
