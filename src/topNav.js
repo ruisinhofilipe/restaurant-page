@@ -13,4 +13,19 @@ for (let i = 0; i < 3; i++) {
     luMenu.appendChild(liMenu);
 }
 
+// const elementFactory = (elementType) => {
+//     this.elementType = elementType;
+//     this.attributes = {};
+//     this.children = [];
+
+//     const addAttributes = (attributes) => {
+//         for (let i of Object.keys(attributes)) {
+//             this.attributes[i] = attributes[i];
+//         }
+//         return this;
+//     }
+// }
+
+// const luMenu = document.createElement()
+
 export default luMenu;

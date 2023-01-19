@@ -49,10 +49,11 @@
     color: black;
     font-size: 2rem;
     font-weight: bold;
+    background-color: rgb(246, 233, 201, 0.8);
+    border-radius: 1rem;
 }
 
 .menuLi:hover {
-    border-radius: 1rem;
     cursor: pointer;
     background-color: rgba(248, 248, 248, 0.4);
 }
