@@ -1,5 +1,5 @@
 import './style.css';
-import mainContainer from './mainContainer';
+import mainContainerElement from './mainContainer';
 
 
-document.body.appendChild(mainContainer)
+document.body.appendChild(mainContainerElement)
