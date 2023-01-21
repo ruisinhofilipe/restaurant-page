@@ -1,5 +1,4 @@
 import './style.css';
-import { mainContainerElement, liPractice } from './elementsCreation';
+import { displayRightPage } from './elementsCreation';
 
-document.body.appendChild(mainContainerElement)
-liPractice();
+displayRightPage();
