@@ -14,5 +14,3 @@ const elementFactory = (elementType, attributes, textContent) => {
 export default elementFactory;
 
 
-
-

@@ -57,3 +57,7 @@
     cursor: pointer;
     background-color: rgba(248, 248, 248, 0.4);
 }
+
+.hidden {
+    display: none !important;
+}
