@@ -39,7 +39,7 @@ const loadUpPage = () => {
             } else if (li.id == 2) {
                 // Display Location content
                 clearPage();
-                // Running the loadPage only to check if everything is working 
+                // Running the loadPage only to check if everything is working according to user clicks
                 loadUpPage();
                 console.log('Location content will be displayed ...');
             } else if (li.id == 3) {
