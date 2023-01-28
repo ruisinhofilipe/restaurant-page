@@ -1,5 +1,5 @@
 import './style.css';
-import { loadUpPage } from './loadPage';
+import loadUpPage from './loadPage';
 
 loadUpPage();
 

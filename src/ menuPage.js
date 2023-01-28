@@ -1,8 +1,8 @@
 import elementFactory from "./elementFactory";
-import { loadUpPage } from "./loadPage";
-import clearPage from "./clearPage";
+import displayPage from "./displayRightPage";
 
 const loadUpMenu = () => {
+    // Create the top Lu
     const mainContainer = elementFactory('div', { class: 'mainContainer' });
     const mainContainerElement = mainContainer.build();
     document.body.appendChild(mainContainerElement);
@@ -24,28 +24,19 @@ const loadUpMenu = () => {
         }
     }
     mainContainerElement.appendChild(luMenuElement);
-    let liNode = document.querySelectorAll('li');
-    liNode.forEach(li => {
-        li.addEventListener('click', () => {
-            if (li.id == 1) {
-                // Display Menu content 
-                clearPage();
-                loadUpMenu();
-                console.log('Menu content will be displayed ...');
-            } else if (li.id == 2) {
-                // Display Location content
-                clearPage();
-                // Running the loadPage only to check if everything is working 
-                loadUpPage();
-                console.log('Location content will be displayed ...');
-            } else if (li.id == 3) {
-                // Display Contact us content
-                console.log('Contact us content will be displayed ...');
-            } else {
-                console.log('Load page');
-            }
-        });
-    });
+
+    // Create Menu container
+    // Create two containers inside the Menu container, one for lunch and another for dinner.
+    // Create the menus then and its content
+    // Append everything
+
+    // const menusContainer = elementFactory('div', { class: 'menusContainer' });
+    // for(let i = 1; )
+
+
+
+    // Display Right page according to user clicks
+    displayPage();
 }
 
 export default loadUpMenu;

@@ -4,16 +4,21 @@
     box-sizing: border-box;
 }
 
-.mainContainer {
-    display: flex;
-    flex-direction: column;
+body {
+    height: 100vh;
+    width: 100vw;
     background-image: url('./restaurant-front.jpg');
-    height: 100%;
-    width: 100%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
 .introductionContainer {
