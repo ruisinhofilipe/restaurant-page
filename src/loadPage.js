@@ -1,7 +1,5 @@
 import displayPage from "./displayRightPage.js";
 import elementFactory from "./elementFactory.js";
-import introductionContainer from "./introduction.js";
-
 
 const loadUpPage = () => {
     const mainContainer = elementFactory('div', { class: 'mainContainer' });
@@ -26,7 +24,6 @@ const loadUpPage = () => {
         }
     }
     mainContainerElement.appendChild(luMenuElement);
-    mainContainerElement.appendChild(introductionContainer);
 
     displayPage();
 }
