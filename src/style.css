@@ -104,7 +104,8 @@ body {
     justify-content: space-evenly;
 }
 
-.mealDiv {
+.mealDivLunch,
+.mealDivDinner {
     border: 5px solid purple;
     width: 33%;
 }

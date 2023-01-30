@@ -2,30 +2,34 @@ import elementFactory from "./elementFactory";
 import displayPage from "./displayRightPage";
 
 const loadUpMenu = () => {
-
-    const menuList = {
-        lunch:
-        {
-            'Caldo verde': {
-                ingredients: 'soup made with potatoes, chouriço sausage, and thinly sliced collard greens or kale.',
-                price: 5,
-            },
-            'Bacalhau com natas': {
-                ingredients: 'baked cod(bacalhau) with onions, diced fried potatoes and double cream, seasoned with nutmeg and white pepper.',
-                price: 10,
-            },
-            'Pastel de nada': {
-                ingredients: 'Custard tart made with puff pastry and filled with egg custard. Served with a dusting of powdered sugar and a pinch of cinnamon.',
-                price: 2,
-            }
+    const lunch = {
+        'Caldo verde': {
+            ingredients: 'soup made with potatoes, chouriço sausage, and thinly sliced collard greens or kale.',
+            price: 5,
         },
-        dinner: {
-            'Francesinha': {
-                ingredients: 'Sandwitch served on a plate made with thick slices of white loaf bread with ham (Portuguese Fiambre), sausage, cheese, and steak and also a special sauce and french fries.',
-                price: 10,
-            }
+        'Bacalhau com natas': {
+            ingredients: 'baked cod(bacalhau) with onions, diced fried potatoes and double cream, seasoned with nutmeg and white pepper.',
+            price: 10,
+        },
+        'Pastel de nata': {
+            ingredients: 'Custard tart made with puff pastry and filled with egg custard. Served with a dusting of powdered sugar and a pinch of cinnamon.',
+            price: 2,
         }
-    };
+    }
+    const dinner = {
+        Francesinha: {
+            ingredients: 'Sandwitch with slices of white loaf bread with ham, sausage, cheese, steak, french fries and special (served on a plate).',
+            price: 10,
+        },
+        'Arroz de polvo': {
+            ingredients: 'Cooked diced octopus and rice, incorporated into a rich base of tomatoes, sautéed onions, garlic, and various spices.',
+            price: 12,
+        },
+        'Prego no prato': {
+            ingredients: 'Rice, french fries, fried egg and beef steak.',
+            price: 9,
+        }
+    }
 
     // Create the top Lu
     const mainContainer = elementFactory('div', { class: 'mainContainer' }).build();
@@ -55,7 +59,7 @@ const loadUpMenu = () => {
     const menusContainerDinner = elementFactory('div', { class: 'menusContainerDinner' }).build();
     menusContainer.appendChild(menusContainerDinner);
 
-    // For each menu container (lunch and dinner) I want to have 3 meals and so I need to create a div for each one + title container
+    // Lunch container content
     //// Title container Lunch
     const titleContainerLunch = elementFactory('div', { class: 'titleContainer' }).build();
     menusContainerLunch.appendChild(titleContainerLunch);
@@ -67,15 +71,50 @@ const loadUpMenu = () => {
     const pLunch = elementFactory('p').build();
     pLunch.textContent = '11:30am - 4pm';
     titleContainerLunch.appendChild(pLunch);
-
     //// Meal container Lunch
     const mealContainerLunch = elementFactory('div', { class: 'mealContainer' }).build();
     menusContainerLunch.append(mealContainerLunch);
     for (let i = 1; i <= 3; i++) {
-        const mealDiv = elementFactory('div', { class: 'mealDiv', id: i }).build();
+        const mealDiv = elementFactory('div', { class: 'mealDivLunch', id: i }).build();
         mealContainerLunch.appendChild(mealDiv);
     }
+    const mealDivLunchNode = document.querySelectorAll('.mealDivLunch');
+    mealDivLunchNode.forEach(div => {
+        if (div.id == 1) {
+            const mealH2 = elementFactory('div', { class: 'mealName' }).build();
+            mealH2.textContent = Object.keys(lunch)[0];
+            div.appendChild(mealH2);
+            const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealP.textContent = lunch['Caldo verde'].ingredients;
+            div.appendChild(mealP);
+            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealSecondP.textContent = lunch['Caldo verde'].price;
+            div.appendChild(mealSecondP);
+        } else if (div.id == 2) {
+            const mealH2 = elementFactory('div', { class: 'mealName' }).build();
+            mealH2.textContent = Object.keys(lunch)[1];
+            div.appendChild(mealH2);
+            const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealP.textContent = lunch['Bacalhau com natas'].ingredients;
+            div.appendChild(mealP);
+            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealSecondP.textContent = lunch['Bacalhau com natas'].price;
+            div.appendChild(mealSecondP);
+        } else {
+            const mealH2 = elementFactory('div', { class: 'mealName' }).build();
+            mealH2.textContent = Object.keys(lunch)[2];
+            div.appendChild(mealH2);
+            const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealP.textContent = lunch['Pastel de nata'].ingredients;
+            div.appendChild(mealP);
+            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealSecondP.textContent = lunch['Pastel de nata'].price;
+            div.appendChild(mealSecondP);
+        }
+    });
 
+
+    // Dinner container content
     //// Title container Dinner
     const titleContainerDinner = elementFactory('div', { class: 'titleContainer' }).build();
     menusContainerDinner.appendChild(titleContainerDinner);
@@ -92,9 +131,44 @@ const loadUpMenu = () => {
     const mealContainerDinner = elementFactory('div', { class: 'mealContainer' }).build();
     menusContainerDinner.append(mealContainerDinner);
     for (let i = 1; i <= 3; i++) {
-        const mealDiv = elementFactory('div', { class: 'mealDiv', id: i }).build();
+        const mealDiv = elementFactory('div', { class: 'mealDivDinner', id: i }).build();
         mealContainerDinner.appendChild(mealDiv);
     }
+    const mealDivDinnerNode = document.querySelectorAll('.mealDivDinner');
+    mealDivDinnerNode.forEach(div => {
+        if (div.id == 1) {
+            const mealH2 = elementFactory('div', { class: 'mealName' }).build();
+            mealH2.textContent = Object.keys(dinner)[0];
+            div.appendChild(mealH2);
+            const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealP.textContent = dinner.Francesinha.ingredients;
+            div.appendChild(mealP);
+            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealSecondP.textContent = dinner.Francesinha.price;
+            div.appendChild(mealSecondP);
+        } else if (div.id == 2) {
+            const mealH2 = elementFactory('div', { class: 'mealName' }).build();
+            mealH2.textContent = Object.keys(dinner)[1];
+            div.appendChild(mealH2);
+            const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealP.textContent = dinner['Arroz de polvo'].ingredients;
+            div.appendChild(mealP);
+            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealSecondP.textContent = dinner['Arroz de polvo'].price;
+            div.appendChild(mealSecondP);
+        } else {
+            const mealH2 = elementFactory('div', { class: 'mealName' }).build();
+            mealH2.textContent = Object.keys(dinner)[2];
+            div.appendChild(mealH2);
+            const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealP.textContent = dinner['Prego no prato'].ingredients;
+            div.appendChild(mealP);
+            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
+            mealSecondP.textContent = dinner['Prego no prato'].price;
+            div.appendChild(mealSecondP);
+        }
+
+    });
 
     // Display Right page according to user clicks
     displayPage();
