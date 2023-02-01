@@ -4,11 +4,11 @@ import displayPage from "./displayRightPage";
 const loadUpMenu = () => {
     const lunch = {
         'Caldo verde': {
-            ingredients: 'soup made with potatoes, chouriço sausage, and thinly sliced collard greens or kale.',
+            ingredients: 'Soup made with potatoes, chouriço sausage, and thinly sliced collard greens or kale.',
             price: 5,
         },
         'Bacalhau com natas': {
-            ingredients: 'baked cod(bacalhau) with onions, diced fried potatoes and double cream, seasoned with nutmeg and white pepper.',
+            ingredients: 'Baked cod (bacalhau) with onions, diced fried potatoes and double cream, seasoned with nutmeg and white pepper.',
             price: 10,
         },
         'Pastel de nata': {
@@ -37,10 +37,10 @@ const loadUpMenu = () => {
     const luMenu = elementFactory('lu', { class: 'menu' }).build();
     for (let i = 1; i <= 3; i++) {
         if (i === 1) {
-            const liMenu = elementFactory('li', { class: 'menuLi', id: 1 }, 'Menu').build();
+            const liMenu = elementFactory('li', { class: 'menuLi', id: 1 }, 'Home').build();
             luMenu.appendChild(liMenu);
         } else if (i === 2) {
-            const liMenu = elementFactory('li', { class: 'menuLi', id: 2 }, 'Location').build();
+            const liMenu = elementFactory('li', { class: 'menuLi', id: 2 }, 'Menu').build();
             luMenu.appendChild(liMenu);
         } else {
             const liMenu = elementFactory('li', { class: 'menuLi', id: 3 }, 'Contact us').build();
@@ -87,8 +87,8 @@ const loadUpMenu = () => {
             const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
             mealP.textContent = lunch['Caldo verde'].ingredients;
             div.appendChild(mealP);
-            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
-            mealSecondP.textContent = lunch['Caldo verde'].price;
+            const mealSecondP = elementFactory('p', { class: 'mealPrice' }).build();
+            mealSecondP.textContent = `${lunch['Caldo verde'].price}$`;
             div.appendChild(mealSecondP);
         } else if (div.id == 2) {
             const mealH2 = elementFactory('div', { class: 'mealName' }).build();
@@ -97,8 +97,8 @@ const loadUpMenu = () => {
             const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
             mealP.textContent = lunch['Bacalhau com natas'].ingredients;
             div.appendChild(mealP);
-            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
-            mealSecondP.textContent = lunch['Bacalhau com natas'].price;
+            const mealSecondP = elementFactory('p', { class: 'mealPrice' }).build();
+            mealSecondP.textContent = `${lunch['Bacalhau com natas'].price}$`;
             div.appendChild(mealSecondP);
         } else {
             const mealH2 = elementFactory('div', { class: 'mealName' }).build();
@@ -107,8 +107,8 @@ const loadUpMenu = () => {
             const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
             mealP.textContent = lunch['Pastel de nata'].ingredients;
             div.appendChild(mealP);
-            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
-            mealSecondP.textContent = lunch['Pastel de nata'].price;
+            const mealSecondP = elementFactory('p', { class: 'mealPrice' }).build();
+            mealSecondP.textContent = `${lunch['Pastel de nata'].price}$`;
             div.appendChild(mealSecondP);
         }
     });
@@ -143,8 +143,8 @@ const loadUpMenu = () => {
             const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
             mealP.textContent = dinner.Francesinha.ingredients;
             div.appendChild(mealP);
-            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
-            mealSecondP.textContent = dinner.Francesinha.price;
+            const mealSecondP = elementFactory('p', { class: 'mealPrice' }).build();
+            mealSecondP.textContent = `${dinner['Francesinha'].price}$`;
             div.appendChild(mealSecondP);
         } else if (div.id == 2) {
             const mealH2 = elementFactory('div', { class: 'mealName' }).build();
@@ -153,8 +153,8 @@ const loadUpMenu = () => {
             const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
             mealP.textContent = dinner['Arroz de polvo'].ingredients;
             div.appendChild(mealP);
-            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
-            mealSecondP.textContent = dinner['Arroz de polvo'].price;
+            const mealSecondP = elementFactory('p', { class: 'mealPrice' }).build();
+            mealSecondP.textContent = `${dinner['Arroz de polvo'].price}$`;
             div.appendChild(mealSecondP);
         } else {
             const mealH2 = elementFactory('div', { class: 'mealName' }).build();
@@ -163,8 +163,8 @@ const loadUpMenu = () => {
             const mealP = elementFactory('p', { class: 'mealIngredients' }).build();
             mealP.textContent = dinner['Prego no prato'].ingredients;
             div.appendChild(mealP);
-            const mealSecondP = elementFactory('p', { class: 'mealIngredients' }).build();
-            mealSecondP.textContent = dinner['Prego no prato'].price;
+            const mealSecondP = elementFactory('p', { class: 'mealPrice' }).build();
+            mealSecondP.textContent = `${dinner['Prego no prato'].price}$`;
             div.appendChild(mealSecondP);
         }
 
