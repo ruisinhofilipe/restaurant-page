@@ -29,8 +29,12 @@ const contactUsPage = () => {
     // Left side of contactUsContainer
     const locationContainer = elementFactory('div', { class: 'locationContainer left' }).build();
     const locationContainerH2 = elementFactory('h2', { class: 'infoH2' }, 'How to find us:').build();
+    const locationLuAddress = elementFactory('lu', { class: 'locationAdressLu' }).build();
+    const locationLiAddress = elementFactory('li', { class: 'infoH2' }, 'You can find us on Nonexistent Street or Completely Fake Street.').build();
     const locationContainerImage = elementFactory('div', { class: 'locationContainerImage' }).build();
     locationContainer.appendChild(locationContainerH2);
+    locationLuAddress.appendChild(locationLiAddress);
+    locationContainer.appendChild(locationLuAddress);
     locationContainer.appendChild(locationContainerImage);
 
     // Right side of contactUsContainer
